@@ -1,0 +1,14 @@
+@import "../Utils/mixins";
+@import "../Utils/variables";
+
+* {
+  color: $text;
+}
+
+h1 {
+  color: $cinq;
+}
+
+#test-result {
+  font-family: "Inconsolata", monospace;
+}
