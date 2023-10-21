@@ -134,16 +134,16 @@ const randomizedID = (quantity, threshold) => {
   let drugNameElement = document.getElementById("resultDrugName");
   let canvasElement = document.getElementById("graphiqueDosages");
   if (quantity >= threshold) {
-    // La machine a 80% de chance de réussir à identifier la substance si le seuil minimum d'identification est atteint
-    if (Math.random() < 0.8) {
+    // La machine a 95% de chance de réussir à identifier la substance si le seuil minimum d'identification est atteint
+    if (Math.random() < 0.95) {
       drugNameElement.innerHTML = `Substance identifiée : <b>${dataValue}</b>.`;
     } else {
       drugNameElement.textContent = "Echec de l'identification.";
       canvasElement.style.display = "none";
     }
   } else {
-    // Les chances de réussite sont réduites à 55% si le seuil minimum d'identification n'est pas atteint
-    if (Math.random() < 0.55) {
+    // Les chances de réussite sont réduites à 65% si le seuil minimum d'identification n'est pas atteint
+    if (Math.random() < 0.65) {
       drugNameElement.innerHTML = `Substance identifiée : <b>${dataValue}</b>.`;
     } else {
       drugNameElement.innerHTML = "Echec de l'identification.";
@@ -161,9 +161,9 @@ const identifyName = (drug, quantity) => {
   identifyType(drug);
   drugName = drug;
   if (drugType === dure) {
-    randomizedID(quantity, 10);
+    randomizedID(quantity, 5);
   } else {
-    randomizedID(quantity, 20);
+    randomizedID(quantity, 10);
   }
 };
 
@@ -195,9 +195,9 @@ const creerGraphique = (nomDrogue) => {
     cannabis: (Math.random() * (5 - 2) + 2).toFixed(2), // Dosage aléatoire entre 2% et 5%, arrondi à 2 décimales
     cocaïne: (Math.random() * (5 - 2) + 2).toFixed(2),
     crack: (Math.random() * (5 - 2) + 2).toFixed(2),
-    méthamphétamines: (Math.random() * (5 - 2) + 2).toFixed(2),
-    héroïne: (Math.random() * (5 - 2) + 2).toFixed(2),
     ecstasy: (Math.random() * (5 - 2) + 2).toFixed(2),
+    héroïne: (Math.random() * (5 - 2) + 2).toFixed(2),
+    méthamphétamines: (Math.random() * (5 - 2) + 2).toFixed(2),
   };
 
   dosages[nomDrogue] = (Math.random() * (100 - 20) + 20).toFixed(2); // Dosage aléatoire entre 20% et 100% pour la drogue identifiée
